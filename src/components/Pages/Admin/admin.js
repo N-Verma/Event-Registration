@@ -1,7 +1,9 @@
 import React,{useState, Component} from 'react';
  import axios from 'axios';
 import * as ROUTES from '../../constants/routes';
- 
+import { faEnvelope,faPhoneAlt, faAddressCard } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class AdminPage extends Component {
   constructor(props){
     super(props);
@@ -32,9 +34,9 @@ class AdminPage extends Component {
         <img className=" card-img-top" style={{height:"250px"}} src={item.url[0]} alt="profile pic"/>
          <h5 className="card-header">{item.username[0]}</h5>
         <div className="card-body">
-         <p className="card-text">{item.email[0]}</p>
-         <p className="card-text">{item.mobile[0]}</p>
-         <p className="card-text">{item.city[0]}, {item.state[0]}</p>
+         <p className="card-text"><FontAwesomeIcon icon={faEnvelope}/> {item.email[0]}</p>
+         <p className="card-text"><FontAwesomeIcon icon={faPhoneAlt}/> {item.mobile[0]}</p>
+         <p className="card-text"><FontAwesomeIcon icon={faAddressCard}/> {item.city[0]}, {item.state[0]}</p>
         </div>
       </div>
       </div>

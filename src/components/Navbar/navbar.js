@@ -2,7 +2,8 @@ import React from 'react'
 import * as ROUTES from '../constants/routes'
 import { Link } from 'react-router-dom';
 import Logout from '../Pages/Login/logout';
-import {authUserContext} from '../Session'
+import {authUserContext} from '../Session';
+import './navbar.css';
 const Navbar=({authUser})=>(
     
     <div>
@@ -47,7 +48,9 @@ const NavWithAuth = (props) => {
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
                 <a className="navbar-brand">FORM</a>
+                
                 <ul className="navbar-nav mr-auto ">
+                    
                     <li className="nav-item active">
                         <Link className="nav-link" to={ROUTES.REGISTER}>Home</Link>
                     </li>
@@ -55,10 +58,11 @@ const NavWithAuth = (props) => {
                     <li className="nav-item">
                         <a className="nav-link">Contacts</a>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link"><Logout/></a>
+                    <li className="nav-item logout">
+                        <a className="nav-link "><Logout/></a>
                     </li>
                 </ul>
+                
             </nav>
         </div>
     );
